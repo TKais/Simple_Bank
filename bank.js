@@ -36,7 +36,7 @@ Controller.prototype = {
   
   showMessage: function(e){
     e.preventDefault();
-    if(pin.pinValue === this.view.pinInput){
+    if(this.pin.pinValue === this.view.pinInput){
       this.view.correctMessage();
     } else {
       this.view.inCorrectMessage();

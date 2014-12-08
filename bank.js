@@ -48,7 +48,7 @@ Controller.prototype = {
 ////////////MODEL///////////////////////////////////////////
 
 function Pin(){
-  this.pinValue = 1234;
+  this.pinValue = 1234; 
 }
 
 
@@ -63,11 +63,11 @@ function View(){
 
 View.prototype = {
   correctMessage: function(){
-    $(".message").text("Correct PIN. Please Proceed");
+    $(".message").html("Correct PIN. Please Proceed");
   },
 
   inCorrectMessage: function(){
-    $(".message").text("Incorrect PIN. Please Try Again");
+    $(".message").html("Incorrect PIN. Please Try Again");
   }
 }
 

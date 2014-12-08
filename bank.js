@@ -34,11 +34,12 @@ Controller.prototype = {
     this.view.pinForm.on('submit', this.showMessage.bind(this));
   },
   
-  showMessage: function(){
+  showMessage: function(e){
+    e.preventDefault();
     if(this.pin.pinValue === this.view.pinInput){
-      alert('Correct PIN. Please Proceed');
+      this.view.correctMessage();
     } else {
-      alert('Incorrect PIN. Do Not Enter');
+      this.view.inCorrectMessage();
     }
   }
 }
@@ -58,6 +59,16 @@ function Pin(){
 function View(){
   this.pinForm = $("#pinForm");
   this.pinInput = $('#pin').val();
+}
+
+View.prototype = {
+  correctMessage: function(){
+    $(".message").text("Correct PIN. Please Proceed");
+  },
+
+  inCorrectMessage: function(){
+    $(".message").text("Incorrect PIN. Please Try Again");
+  }
 }
 
 

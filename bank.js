@@ -23,7 +23,7 @@ $(document).ready(function(){
 })
 
 
-function Controller(){
+function Controller(view, pin){
   this.view = view;
   this.pin = pin;
 }
@@ -31,7 +31,15 @@ function Controller(){
 
 Controller.prototype = {
   bindListeners: function(){
-    this.view.showCorrect
+    this.view.pinForm.on('submit', this.showMessage.bind(this));
+  },
+  
+  showMessage: function(){
+    if(this.pin.pinValue === this.view.pinInput){
+      alert('Correct PIN. Please Proceed');
+    } else {
+      alert('Incorrect PIN. Do Not Enter');
+    }
   }
 }
 
@@ -53,11 +61,7 @@ function View(){
 }
 
 
-View.prototype = {
-  showCorrect: function(){
-    
-  }
-}
+
 
 
 

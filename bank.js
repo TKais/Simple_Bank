@@ -36,7 +36,7 @@ Controller.prototype = {
   
   showMessage: function(e){
     e.preventDefault();
-    if(this.pin.pinValue === this.view.pinInput){
+    if(pin.pinValue === this.view.pinInput){
       this.view.correctMessage();
     } else {
       this.view.inCorrectMessage();
@@ -48,7 +48,7 @@ Controller.prototype = {
 ////////////MODEL///////////////////////////////////////////
 
 function Pin(){
-  this.pinValue = 1234; 
+  this.pinValue = "1234"; 
 }
 
 
@@ -68,6 +68,7 @@ View.prototype = {
 
   inCorrectMessage: function(){
     $(".message").html("Incorrect PIN. Please Try Again");
+    $('#pin').css('border-color', 'red');
   }
 }
 

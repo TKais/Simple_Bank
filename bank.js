@@ -21,3 +21,52 @@ $(document).ready(function(){
   var controller = new Controller(view, pin);
   controller.bindListeners();
 })
+
+
+function Controller(){
+  this.view = view;
+  this.pin = pin;
+}
+
+
+Controller.prototype = {
+  bindListeners: function(){
+    this.view.showCorrect
+  }
+}
+
+
+////////////MODEL///////////////////////////////////////////
+
+function Pin(){
+  this.pinValue = 1234;
+}
+
+
+
+
+///////////VIEW//////////////////////////////////////////////
+
+function View(){
+  this.pinForm = $("#pinForm");
+  this.pinInput = $('#pin').val();
+}
+
+
+View.prototype = {
+  showCorrect: function(){
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -19,6 +19,7 @@ $(document).ready(function(){
   var view = new View();
   var pin = new Pin();
   var controller = new Controller(view, pin);
+  $('.ATMOptions').hide();
   controller.bindListeners();
 })
 
@@ -37,7 +38,7 @@ Controller.prototype = {
   showMessage: function(e){
     e.preventDefault();
     if(this.pin.pinValue === this.view.pinInput[0].value){
-      this.view.correctMessage();
+      this.view.optionsPage();
     } else {
       this.view.inCorrectMessage();
     }
@@ -70,6 +71,12 @@ View.prototype = {
   inCorrectMessage: function(){
     $(".message").html("Incorrect PIN. Please Try Again");
     $('#pinput').css('border-color', 'red');
+  },
+
+  optionsPage: function(){
+    $('.pin').hide();
+    $(".message").hide();
+    $('.ATMOptions').show();
   }
 }
 

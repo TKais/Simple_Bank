@@ -19,6 +19,7 @@ $(document).ready(function(){
   var view = new View();
   var pin = new Pin();
   var controller = new Controller(view, pin);
+  var account = 100000
   $('.ATMOptions').hide();
   controller.bindListeners();
 })
@@ -33,6 +34,9 @@ function Controller(view, pin){
 Controller.prototype = {
   bindListeners: function(){
     this.view.pinForm.on('submit', this.showMessage.bind(this));
+    this.view.withdrawal.on('click', this.withdrawMoney.bind(this));
+    this.view.balance.on('click', this.balanceMoney.bind(this));
+    this.view.deposit.on('click', this.depositMoney.bind(this));
   },
   
   showMessage: function(e){
@@ -42,8 +46,20 @@ Controller.prototype = {
     } else {
       this.view.inCorrectMessage();
     }
+  },
+
+  withdrawMoney: function(){
+    alert("You've successfully taken money!");
+  },
+
+  balanceMoney: function(){
+    alert("You have a lot of money!");
+  },
+
+  depositMoney: function(){
+    alert("You've successfully deposited money!");
   }
-}
+};
 
 
 ////////////MODEL///////////////////////////////////////////
@@ -60,6 +76,9 @@ function Pin(){
 function View(){
   this.pinForm = $("#pinForm");
   this.pinInput = $("input#pinput");
+  this.withdrawal = $(".withdrawal");
+  this.balance = $(".balance");
+  this.deposit = $(".deposit");
 }
 
 View.prototype = {

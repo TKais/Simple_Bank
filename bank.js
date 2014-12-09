@@ -36,7 +36,7 @@ Controller.prototype = {
   
   showMessage: function(e){
     e.preventDefault();
-    if(this.pin.pinValue === this.view.pinInput){
+    if(this.pin.pinValue === this.view.pinInput[0].value){
       this.view.correctMessage();
     } else {
       this.view.inCorrectMessage();
@@ -58,17 +58,18 @@ function Pin(){
 
 function View(){
   this.pinForm = $("#pinForm");
-  this.pinInput = $('#pin').val();
+  this.pinInput = $("input#pinput");
 }
 
 View.prototype = {
   correctMessage: function(){
     $(".message").html("Correct PIN. Please Proceed");
+    $('#pinput').css('border-color', 'green');
   },
 
   inCorrectMessage: function(){
     $(".message").html("Incorrect PIN. Please Try Again");
-    $('#pin').css('border-color', 'red');
+    $('#pinput').css('border-color', 'red');
   }
 }
 

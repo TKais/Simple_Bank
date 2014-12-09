@@ -2,6 +2,8 @@ body {
   background-color: #006699;
 }
 
-h1{
+h1 {
   color: #CC9900;
+  font-family: zekton;
+  font-weight: bold;
 }

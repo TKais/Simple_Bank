@@ -50,7 +50,7 @@ Controller.prototype = {
   },
 
   withdrawMoney: function(){
-    alert("You've successfully taken money!");
+    
   },
 
   balanceMoney: function(){
@@ -73,6 +73,11 @@ function Money(){
   this.account = 0;
 }
 
+Money.prototype = {
+  makeWithdrawal: function(value){
+    var total = this.account + value;
+  }
+}
 
 
 

@@ -18,16 +18,17 @@
 $(document).ready(function(){
   var view = new View();
   var pin = new Pin();
-  var controller = new Controller(view, pin);
+  var money = new Money();
+  var controller = new Controller(view, pin, money);
   $('.ATMOptions').hide();
   controller.bindListeners();
 })
 
 
-function Controller(view, pin){
+function Controller(view, pin, money){
   this.view = view;
   this.pin = pin;
-  this.account = 0;
+  this.money = money;
 }
 
 
@@ -53,7 +54,8 @@ Controller.prototype = {
   },
 
   balanceMoney: function(){
-    this.view.showBalance(this.account);
+    this.view.showBalance(this.money.account);
+    console.log(this.money.account);
   },
 
   depositMoney: function(){
@@ -66,6 +68,10 @@ Controller.prototype = {
 
 function Pin(){
   this.pinValue = "1234"; 
+}
+
+function Money(){
+  this.account = 0;
 }
 
 
@@ -98,7 +104,7 @@ View.prototype = {
     $('.ATMOptions').show();
   },
 
-  showBalance: function(){
+  showBalance: function(account){
     $('.ATMOptions').hide();
     $('.balancediv').show();
     $('.balancediv').html("Your current balance is " + this.account);

@@ -107,7 +107,7 @@ View.prototype = {
   showBalance: function(account){
     $('.ATMOptions').hide();
     $('.balancediv').show();
-    $('.balancediv').html("Your current balance is " + this.account);
+    $('.balancediv').html("Your current balance is " + account);
   }
 }
 

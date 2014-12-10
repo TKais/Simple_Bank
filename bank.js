@@ -55,7 +55,6 @@ Controller.prototype = {
 
   balanceMoney: function(){
     this.view.showBalance(this.money.account);
-    console.log(this.money.account);
   },
 
   depositMoney: function(){

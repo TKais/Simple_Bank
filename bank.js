@@ -21,6 +21,7 @@ $(document).ready(function(){
   var money = new Money();
   var controller = new Controller(view, pin, money);
   $('.ATMOptions').hide();
+  $('.back').hide();
   controller.bindListeners();
 })
 
@@ -38,6 +39,7 @@ Controller.prototype = {
     this.view.withdrawal.on('click', this.withdrawMoney.bind(this));
     this.view.balance.on('click', this.balanceMoney.bind(this));
     this.view.deposit.on('click', this.depositMoney.bind(this));
+    this.view.back.on('click', this.view.optionsPage.bind(this));
   },
   
   showMessage: function(e){
@@ -89,14 +91,10 @@ function View(){
   this.withdrawal = $(".withdrawal");
   this.balance = $(".balance");
   this.deposit = $(".deposit");
+  this.back = $(".back");
 }
 
 View.prototype = {
-  correctMessage: function(){
-    $(".message").html("Correct PIN. Please Proceed");
-    $('#pinput').css('border-color', 'green');
-  },
-
   inCorrectMessage: function(){
     $(".message").html("Incorrect PIN. Please Try Again");
     $('#pinput').css('border-color', 'red');
@@ -112,6 +110,7 @@ View.prototype = {
     $('.ATMOptions').hide();
     $('.balancediv').show();
     $('.balancediv').html("Your current balance is " + account);
+    $('button .back').show();
   }
 }
 

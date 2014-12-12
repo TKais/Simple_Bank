@@ -39,7 +39,7 @@ Controller.prototype = {
     this.view.withdrawal.on('click', this.withdrawMoney.bind(this));
     this.view.balance.on('click', this.balanceMoney.bind(this));
     this.view.deposit.on('click', this.depositMoney.bind(this));
-    this.view.back.on('click', this.view.optionsPage.bind(this));
+    this.view.back.on('click', this.takeBack.bind(this));
   },
   
   showMessage: function(e){
@@ -53,6 +53,10 @@ Controller.prototype = {
 
   withdrawMoney: function(){
     
+  },
+
+  takeBack: function(){
+    this.view.optionsPage();
   },
 
   balanceMoney: function(){
@@ -104,13 +108,14 @@ View.prototype = {
     $('.pin').hide();
     $(".message").hide();
     $('.ATMOptions').show();
+    $('.back').hide()
   },
 
   showBalance: function(account){
     $('.ATMOptions').hide();
     $('.balancediv').show();
+    $('.back').show();
     $('.balancediv').html("Your current balance is " + account);
-    $('button .back').show();
   }
 }
 

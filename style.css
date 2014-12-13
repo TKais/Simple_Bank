@@ -1,4 +1,4 @@
-body {
+.pin {
   background-color: #006699;
   text-align: center;
 }
@@ -7,4 +7,32 @@ h1 {
   color: #CC9900;
   font-family: zekton;
   font-weight: bold;
+}
+
+.message {
+  background-color: #006699;
+}
+
+.ATMOptions{
+  background-color: #006699;
+}
+
+.balancediv {
+  background-color: #006699;
+}
+
+.withdrawdiv {
+  background-color: #006699;
+}
+
+.depositdiv {
+  background-color: #006699;
+}
+
+.footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 80%;
+  color: #CC9900;
 }

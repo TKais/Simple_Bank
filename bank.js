@@ -52,7 +52,7 @@ Controller.prototype = {
   },
 
   withdrawMoney: function(){
-    
+    alert("You've successfully withdrawn money");
   },
 
   takeBack: function(){

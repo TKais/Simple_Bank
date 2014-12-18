@@ -53,7 +53,8 @@ Controller.prototype = {
 
   withdrawMoney: function(){
     var takeOut = prompt("How much would you like to withdraw?");
-    this.view.showWithdrawal(takeOut);
+    var total = this.money.makeWithdrawal(takeOut);
+    this.view.showWithdrawal(total);
   },
 
   takeBack: function(){
@@ -82,11 +83,13 @@ function Money(){
 }
 
 Money.prototype = {
-  makeWithdrawal: function(value){
-    var total = this.account + value;
+  makeWithdrawal: function(takeOut){
+    var total = this.account - takeOut;
   },
 
-  
+  makeDeposit: function(){
+
+  }
 }
 
 
@@ -128,10 +131,10 @@ View.prototype = {
     $('.depositdiv').html("You have deposited $" + amount + " into your account");
   },
 
-  showWithdrawal: function(takeOut){
+  showWithdrawal: function(total){
     $('.ATMOptions').hide();
     $('.withdrawdiv').show();
-    $('.withdrawdiv').html("You have withdrawn $" + takeOut + " from your account");
+    $('.withdrawdiv').html("You have withdrawn $" + this.total + " from your account. Your account balance is now $" + this.total);
   }
 }
 

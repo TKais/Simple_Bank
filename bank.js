@@ -39,7 +39,7 @@ Controller.prototype = {
     this.view.withdrawal.on('click', this.withdrawMoney.bind(this));
     this.view.balance.on('click', this.balanceMoney.bind(this));
     this.view.deposit.on('click', this.depositMoney.bind(this));
-    this.view.back.on('click', this.takeBack.bind(this));
+    this.view.back.on('click');
   },
   
   showMessage: function(e){
@@ -52,7 +52,8 @@ Controller.prototype = {
   },
 
   withdrawMoney: function(){
-    alert("You've successfully withdrawn money");
+    var takeOut = prompt("How much would you like to withdraw?");
+    this.view.showWithdrawal(takeOut);
   },
 
   takeBack: function(){
@@ -125,6 +126,12 @@ View.prototype = {
     $('.ATMOptions').hide();
     $('.depositdiv').show();
     $('.depositdiv').html("You have deposited $" + amount + " into your account");
+  },
+
+  showWithdrawal: function(takeOut){
+    $('.ATMOptions').hide();
+    $('.withdrawdiv').show();
+    $('.withdrawdiv').html("You have withdrawn $" + takeOut + " from your account");
   }
 }
 

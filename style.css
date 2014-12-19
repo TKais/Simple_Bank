@@ -10,18 +10,23 @@ h1 {
 }
 
 .message {
+  text-align: center;
 }
 
 .ATMOptions{
+  text-align: center;
 }
 
 .balancediv {
+  text-align: center;
 }
 
 .withdrawdiv {
+  text-align: center;
 }
 
 .depositdiv {
+  text-align: center;
 }
 
 .footer {

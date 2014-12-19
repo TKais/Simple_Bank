@@ -79,7 +79,7 @@ function Pin(){
 }
 
 function Money(){
-  this.account = 0;
+  this.account = 100;
 }
 
 Money.prototype = {
@@ -122,7 +122,7 @@ View.prototype = {
     $('.ATMOptions').hide();
     $('.balancediv').show();
     $('.balancediv').next('.back');
-    $('.balancediv').html("Your current balance is " + account);
+    $('.balancediv').html("Your current balance is $" + account);
   },
 
   showDeposit: function(amount){

@@ -39,7 +39,7 @@ Controller.prototype = {
     this.view.withdrawal.on('click', this.withdrawMoney.bind(this));
     this.view.balance.on('click', this.balanceMoney.bind(this));
     this.view.deposit.on('click', this.depositMoney.bind(this));
-    this.view.back.on('click');
+    this.view.image.on('mouseover', this.revealPin.bind(this));
   },
   
   showMessage: function(e){
@@ -69,6 +69,10 @@ Controller.prototype = {
     var amount = prompt("How much would you like to deposit?");
     var makeCalculation = this.money.makeDeposit(amount);
     this.view.showDeposit(amount, makeCalculation);
+  },
+
+  revealPin: function(){
+    console.log('Pssst...The pin is 1234');
   }
 };
 
@@ -106,6 +110,7 @@ function View(){
   this.balance = $(".balance");
   this.deposit = $(".deposit");
   this.back = $(".back");
+  this.image = $("img");
 }
 
 View.prototype = {

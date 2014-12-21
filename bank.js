@@ -67,7 +67,8 @@ Controller.prototype = {
 
   depositMoney: function(){
     var amount = prompt("How much would you like to deposit?");
-    this.view.showDeposit(amount);
+    var makeCalculation = this.money.makeDeposit(amount);
+    this.view.showDeposit(amount, makeCalculation);
   }
 };
 
@@ -88,8 +89,9 @@ Money.prototype = {
     return subtract;
   },
 
-  makeDeposit: function(){
-
+  makeDeposit: function(amount){
+    var add = this.account + amount;
+    return add;
   }
 }
 
@@ -126,10 +128,10 @@ View.prototype = {
     $('.balancediv').html("Your current balance is $" + account);
   },
 
-  showDeposit: function(amount){
+  showDeposit: function(amount, makeCalculation){
     $('.ATMOptions').hide();
     $('.depositdiv').show();
-    $('.depositdiv').html("You have deposited $" + amount + " into your account");
+    $('.depositdiv').html("You have deposited $" + amount + " into your account. Your account balance is now $" + makeCalculation);
   },
 
   showWithdrawal: function(takeOut, calculate){

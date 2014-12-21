@@ -1,31 +1,56 @@
+body {
+  background-color: white;
+}
+
 .pin {
-  background-color: #006699;
+  margin: 9%;
   text-align: center;
 }
 
+img {
+  float: right;
+}
+
 h1 {
-  color: #CC9900;
+  color: #006699;
   font-family: zekton;
   font-weight: bold;
 }
 
+button {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(28, 184, 65);
+  width: 90px;
+  height: 40px;
+  cursor: pointer;
+  font: 'Helvetica';
+  font-weight: bold;
+}
+
 .message {
+  margin: 9%;
   text-align: center;
 }
 
 .ATMOptions{
+  margin: 9%;
   text-align: center;
 }
 
 .balancediv {
+  margin: 9%;
   text-align: center;
 }
 
 .withdrawdiv {
+  margin: 9%;
   text-align: center;
 }
 
 .depositdiv {
+  margin: 9%;
   text-align: center;
 }
 

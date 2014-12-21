@@ -118,7 +118,7 @@ View.prototype = {
     $('.pin').hide();
     $(".message").hide();
     $('.ATMOptions').show();
-    $('.back').hide()
+    $('.back').hide();
   },
 
   showBalance: function(account){

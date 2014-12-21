@@ -8,13 +8,17 @@ body {
 }
 
 img {
-  float: right;
+  z-index: -100;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
 }
 
-h1 {
+h2 {
   color: #006699;
   font-family: zekton;
   font-weight: bold;
+  text-align: center;
 }
 
 button {

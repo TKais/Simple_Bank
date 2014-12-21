@@ -90,7 +90,7 @@ Money.prototype = {
   },
 
   makeDeposit: function(amount){
-    var add = this.account + amount;
+    var add = this.account + parseInt(amount, 10);
     return add;
   }
 }

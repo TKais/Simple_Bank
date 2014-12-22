@@ -40,6 +40,7 @@ Controller.prototype = {
     this.view.balance.on('click', this.balanceMoney.bind(this));
     this.view.deposit.on('click', this.depositMoney.bind(this));
     this.view.image.on('mouseover', this.revealPin.bind(this));
+    this.view.image.on('mouseout', this.hidePin.bind(this));
   },
   
   showMessage: function(e){
@@ -72,7 +73,13 @@ Controller.prototype = {
   },
 
   revealPin: function(){
-    console.log('Pssst...The pin is 1234');
+    pinval = this.pin.pinValue;
+    balanceval = this.money.account;
+    this.view.piggybankReveal(pinval, balanceval);
+  },
+
+  hidePin: function(){
+    this.view.piggybankAway();
   }
 };
 
@@ -143,6 +150,15 @@ View.prototype = {
     $('.ATMOptions').hide();
     $('.withdrawdiv').show();
     $('.withdrawdiv').html("You have withdrawn $" + takeOut + " from your account. Your account balance is now $" + calculate);
+  },
+
+  piggybankReveal: function(pinval, balanceval){
+    $('.pigMessage').show();
+    $('.pigMessage').html("Psssst...just an FYI, the pin is " + pinval + " and your starting balance here is always " + balanceval);
+  },
+
+  piggybankAway: function(){
+    $('.pigMessage').hide();
   }
 }
 

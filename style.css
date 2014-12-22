@@ -1,5 +1,7 @@
 body {
   background-color: white;
+  font-family:'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 .pin {
@@ -29,8 +31,8 @@ button {
   width: 90px;
   height: 40px;
   cursor: pointer;
-  font: 'Helvetica';
-  font-weight: bold;
+  font-family:'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 .message {

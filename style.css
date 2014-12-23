@@ -60,6 +60,16 @@ button {
   text-align: center;
 }
 
+.pigMessage {
+  width: 20%;
+  position: fixed;
+  bottom: 20px;
+  float: right;
+  z-index: 10;
+  padding-left: 45%;
+  color: black;
+}
+
 .footer {
   bottom: 0;
   left: 0;
